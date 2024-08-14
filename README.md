@@ -1,4 +1,8 @@
-App web para criação de orçamentos.
+Um site responsivo onde é possível gerar um orçamento para um cliente e fazer o download em PDF. No sistema Android é possível enviar o orçamento via WhatsApp.
 
-![Captura de tela de 2024-02-27 03-09-21](https://github.com/lucassilvafs/Orcamentos-FB/assets/56982114/c3d4ce22-c8a6-4182-9e3d-933b74645e5c)
+![Sistema de Orçamento](https://github.com/user-attachments/assets/1703dabf-8e68-4946-a8bb-f25e0c5f8921)
+
+![Sistema de Orçamento](https://github.com/user-attachments/assets/73d0c211-3240-489a-a798-2c535dc6ba34)
+
 # sistema-de-orcamento
+
