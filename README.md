@@ -1,6 +1,8 @@
 Um site responsivo onde é possível gerar um orçamento para um cliente e fazer o download em PDF.
 
-É possivel adicionar, remover e alterar um produto. Também é possível cadastrar, alterar e excluir um produto no banco de dados na página de Produtos.
+Na página Inicial é possivel adicionar, remover e alterar um produto. 
+
+Na Página de Produtos é possível cadastrar, alterar e excluir um produto no banco de dados.
 
 No sistema Android é possível enviar o orçamento via WhatsApp.
 
