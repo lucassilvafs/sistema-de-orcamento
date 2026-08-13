@@ -51,6 +51,7 @@ export const GridContainer = styled.div`
 }
 `;
 
+
 export const ButtonContainer = styled.div`
   display: flex;
   justify-content: space-around;
