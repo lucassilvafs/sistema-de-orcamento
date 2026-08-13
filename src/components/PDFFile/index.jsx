@@ -109,6 +109,7 @@ const PdfFile = React.forwardRef(({ props }, ref) => {
           </div>
         </section>
       </main>
+      
           <footer className="footer">
             <p>
               Fortaleza, {day} de {month} de {year}
