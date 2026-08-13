@@ -36,28 +36,6 @@ export const ItemsContainer = styled.div`
   }
 `;
 
-// export const CardContainer = styled.div`
-//   width: 90%;
-//   display: flex;
-//   gap: 20px;
-//   overflow-x: scroll;
-//   scroll-behavior: smooth;
-//   margin-left: 20px;
-//   margin-top: 10px;
-
-//   @media (min-width: 750px) {
-//     width: 1050px;
-//     height: 65px;
-//     display: flex;
-//     gap: 10px;
-//     overflow-x: scroll;
-//     scroll-behavior: smooth;
-//     ::-webkit-scrollbar { 
-//       display: none;
-//     }
-//   }
-// `;
-
 export const GridContainer = styled.div`
   width: 95%;
   background-color: #fff;
@@ -201,24 +179,6 @@ export const Button = styled.button`
     background-color: #FFB703;
 }
 `;
-
-// export const ButtonScroll = styled.button`
-//   align-self: center;
-//   height: 40px;
-//   width: 40px;
-//   margin: 0px 40px;
-//   padding: 5px 10px;
-//   border: none;
-//   border-radius: 100%;
-//   cursor: pointer;
-//   color: white;
-//   transition: all 0.25s ease;
-//   background-color: #F29215;
-//   &:hover {
-//     background-color: #FFB703;
-
-// }
-// `;
 
 export const Label = styled.label`
   font-family: Poppins;
@@ -526,22 +486,13 @@ export const DateDisplay = styled.div`
   color: #333;
 `;
 
-
-// export const CarouselWrapper = styled.div`
-//   position: relative;
-//   display: flex;
-//   align-items: center;
-//   width: 100%;
-//   margin: 10px 0;
-// `;
-
 export const CarouselWrapper = styled.div`
   position: relative;
   display: flex;
   align-items: center;
-  width: 90%; /* Diminui a largura para 90% do espaço total */
-  max-width: 1200px; /* Opcional: Evita que estique demais em monitores ultrawide */
-  margin: 10px auto; /* O "auto" nas laterais é o que centraliza o container */
+  width: 90%;
+  max-width: 1200px;
+  margin: 10px auto;
 `;
 
 export const CardContainer = styled.div`
