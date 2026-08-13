@@ -33,15 +33,18 @@ const FormProduct = () => {
     getData();
   }, [load]);
 
+  // const generateID = () => Math.round(Math.random() * 100);
+
   const handleSave = async () => {
     if (!productName || !quant) {
       alert("Informe o produto e a quantidade!");
       return;
     }
     
-    if (unitValue <= 0 || quant < 1) {
+    if (unitValue < 1 || quant < 1) {
       alert("Os valores tem que ser positivos!");
       return;
+      
     }
 
     await setDoc(doc(db, "products", productName), {
@@ -61,7 +64,6 @@ const FormProduct = () => {
   };
 
   const onEdit = (name) => {
-    console.log('nome aqui: ' + name);
     setNameToSearch(name);
     
     const productForEdit = dataProducts.find((product) => product.name === name);

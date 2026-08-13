@@ -96,7 +96,7 @@ export const TopContainer = styled.div`
   justify-content: space-evenly;
   padding: 15px 0px;
   gap: 10px;
-  margin-top: -40px;
+  // margin-top: -40px;
 
   @media (max-width: 750px) {
     display: grid;

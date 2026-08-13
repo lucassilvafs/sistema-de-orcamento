@@ -6,7 +6,13 @@
   height: 50px;
   width: 190px;
   justify-content: center;
+  /* gap: 40px; */
   margin-inline: 10px;
+
+  /* @media (max-width: 750px) {
+    height: 60px;
+    width: 150px;
+  } */
 }
 
 .product-info {
@@ -25,7 +31,9 @@
   height: 50px;
   width: 190px;
   cursor: pointer;
+  /* background-color: #F29215; */
   border: none;
+  /* border-color: #F29215; */
   border-radius: 5px;
   background-color: #F29215;
   &:hover {
@@ -44,9 +52,13 @@
   font-size: 14px;
   font-style: normal;
   font-weight: 700;
+  /* height: 16px; */
   line-height: 16px;
+  /* max-width: 75ch; */
   text-align: center;
   text-decoration: none;
+  /* top: 436px; */
+  /* width: 20px; */
 }
 
 .product-price, .product-quant {
@@ -55,6 +67,7 @@
   font-style: normal;
   font-weight: 600;
   margin-top: 10px;
+  /* top: 462.13px; */
 }
 
 

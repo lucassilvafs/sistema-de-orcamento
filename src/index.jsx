@@ -1,8 +1,10 @@
 import React from "react";
 import { createRoot } from "react-dom/client";
+import App from "./App";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import Home from "./routes/Home";
 import Products from "./routes/Products";
+import History from "./routes/FileHistory";
 
 const router = createBrowserRouter([
   {
@@ -10,9 +12,13 @@ const router = createBrowserRouter([
     element: <Home/>,
   },
   {
-    path: "products",
+    path: "produtos",
     element: <Products/>,
-  }
+  },
+  {
+    path: "historico",
+    element: <History/>,
+  },
 ])
 
 const root = createRoot(document.getElementById("root"));

@@ -36,27 +36,27 @@ export const ItemsContainer = styled.div`
   }
 `;
 
-export const CardContainer = styled.div`
-  width: 90%;
-  display: flex;
-  gap: 20px;
-  overflow-x: scroll;
-  scroll-behavior: smooth;
-  margin-left: 20px;
-  margin-top: 10px;
+// export const CardContainer = styled.div`
+//   width: 90%;
+//   display: flex;
+//   gap: 20px;
+//   overflow-x: scroll;
+//   scroll-behavior: smooth;
+//   margin-left: 20px;
+//   margin-top: 10px;
 
-  @media (min-width: 750px) {
-    width: 1050px;
-    height: 65px;
-    display: flex;
-    gap: 10px;
-    overflow-x: scroll;
-    scroll-behavior: smooth;
-    ::-webkit-scrollbar { 
-      display: none;
-    }
-  }
-`;
+//   @media (min-width: 750px) {
+//     width: 1050px;
+//     height: 65px;
+//     display: flex;
+//     gap: 10px;
+//     overflow-x: scroll;
+//     scroll-behavior: smooth;
+//     ::-webkit-scrollbar { 
+//       display: none;
+//     }
+//   }
+// `;
 
 export const GridContainer = styled.div`
   width: 95%;
@@ -95,18 +95,45 @@ export const TopContainer = styled.div`
   border-radius: 5px;
   display: flex;
   justify-content: space-around;
+  flex-direction: column;
   padding: 15px 0px;
-  gap: 10px;
-  margin-top: -40px;
+  gap: 20px;
+  // margin-top: -40px;
 
   @media (max-width: 750px) {
     display: grid;
+    gap: 0px;
   }
 `;
 
 export const InputContent = styled.div`
   display: flex;
   flex-direction: column;
+
+  @media (max-width: 750px) {
+    margin-bottom: 15px;
+    margin-top: 5px;
+  }
+`;
+
+export const SubContainer = styled.div`
+  display: flex;
+  justify-content: space-evenly;
+
+  @media (max-width: 750px) {
+    display: grid;
+  }
+`;
+
+export const ButtonTotalContainer = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 100%;
+
+  @media (max-width: 750px) {
+    display: grid;
+  }
 `;
 
 export const Input = styled.input`
@@ -143,7 +170,7 @@ export const TopInput = styled.input`
   border: 1px solid #ccc;
 `;
 
-export const RadioGroup = styled.div`
+export const RadioGroup = styled.div`Data selecionada
   display: flex;
   align-items: center;
 
@@ -175,23 +202,23 @@ export const Button = styled.button`
 }
 `;
 
-export const ButtonScroll = styled.button`
-  align-self: center;
-  height: 40px;
-  width: 40px;
-  margin: 0px 40px;
-  padding: 10px 10px;
-  border: none;
-  border-radius: 100%;
-  cursor: pointer;
-  color: white;
-  transition: all 0.25s ease;
-  background-color: #F29215;
-  &:hover {
-    background-color: #FFB703;
+// export const ButtonScroll = styled.button`
+//   align-self: center;
+//   height: 40px;
+//   width: 40px;
+//   margin: 0px 40px;
+//   padding: 5px 10px;
+//   border: none;
+//   border-radius: 100%;
+//   cursor: pointer;
+//   color: white;
+//   transition: all 0.25s ease;
+//   background-color: #F29215;
+//   &:hover {
+//     background-color: #FFB703;
 
-}
-`;
+// }
+// `;
 
 export const Label = styled.label`
   font-family: Poppins;
@@ -259,7 +286,7 @@ export const ResumeContainer = styled.div`
   border-radius: 5px;
   box-shadow: 0px 0px 5px #ccc;
   padding: 5px 15px;
-  width: 30%;
+  width: 40%;
 
   @media (max-width: 750px) {
     width: 100%;
@@ -295,7 +322,7 @@ export const Footer = styled.div`
 
 export const HeaderTitleResume = styled.p`
   margin-top: 20px;
-  font-size: 20px;
+  font-size: 25px;
   font-weight: bold;
 `;
 
@@ -325,9 +352,34 @@ export const ButtonDownload = styled.button`
     font-size: 16px;
   }
 
-  @media (pointer: coarse) {
-    display: none;
+  // @media (pointer: coarse) {
+  //   display: none;
+  // }
+`; 
+
+export const ButtonReceipt = styled.button`
+  margin-bottom: 20px;
+  padding: 10px 40px;
+  border: 1px solid;
+  border-radius: 5px;
+  border-color: #043659;
+  cursor: pointer;
+  font-size: 18px;
+  color: #043659;
+  background-color: #fff;
+  transition: all 0.25s ease;
+  &:hover {
+    background-color: #043659;
+    color: #fff;
+}
+
+  @media (max-width: 750px) {
+    font-size: 16px;
   }
+
+  // @media (pointer: coarse) {
+  //   display: none;
+  // }
 `; 
 
 export const ButtonShare = styled.button`
@@ -429,4 +481,109 @@ export const InputDescModal = styled.textarea`
   height: 70px;
   font-size: 15px;
   border: 1px solid #ccc;
+`;
+
+
+export const TopContainerModal = styled.div`
+  max-width: 1120px;
+  margin: 20px auto;
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  padding: 15px 0px;
+  gap: 10px;
+
+  @media (max-width: 750px) {
+    display: grid;
+  }
+`;
+
+
+export const DateButton = styled.button`
+  border: 1px solid #cfcfcf;
+  background: #fff;
+  border-radius: 12px;  
+  padding: 6px 10px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 37px;
+  height: 37px;
+  transition: 0.2s;
+  box-shadow: 0px 2px 5px rgba(0,0,0,0.1);
+
+  &:hover {
+    background: #F29215;
+  }
+`;
+
+export const DateDisplay = styled.div`
+  margin-top: 15px;
+  font-size: 15px;
+  font-weight: 500;
+  color: #333;
+`;
+
+
+// export const CarouselWrapper = styled.div`
+//   position: relative;
+//   display: flex;
+//   align-items: center;
+//   width: 100%;
+//   margin: 10px 0;
+// `;
+
+export const CarouselWrapper = styled.div`
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 90%; /* Diminui a largura para 90% do espaço total */
+  max-width: 1200px; /* Opcional: Evita que estique demais em monitores ultrawide */
+  margin: 10px auto; /* O "auto" nas laterais é o que centraliza o container */
+`;
+
+export const CardContainer = styled.div`
+  display: flex;
+  gap: 15px;
+  width: 100%;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  padding: 10px 5px;
+  
+  scrollbar-width: none;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+`;
+
+export const ButtonScroll = styled.button`
+  position: absolute;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #043659;
+  color: #ffffff;
+  border: 1px solid #043659;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  
+  ${(props) => (props.direction === "left" ? "left: -15px;" : "right: -15px;")}
+
+  &:hover {
+    background-color: #0f6bac;
+    color: #ffffff;
+    transform: scale(1.1);
+    border-color: #0f6bac;
+  }
+
+  @media (max-width: 768px) {
+    display: none;
+  }
 `;

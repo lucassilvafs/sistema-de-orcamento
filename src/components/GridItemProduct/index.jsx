@@ -7,7 +7,8 @@ const GridItemProduct = ({ item, onDelete, onEdit }) => {
     <C.Tr>
       <C.TdText>{item.name}</C.TdText>
       <C.TdText>{item.desc}</C.TdText>
-      <C.TdNumber>R$ {Number(item.price).toFixed(2)}</C.TdNumber>
+      {/* <C.TdNumber>R$ {Number(item.price).toFixed(2)}</C.TdNumber> */}
+      <C.TdNumber>{Number(item.price).toLocaleString("pt-BR", {style: "currency", currency: "BRL",})}</C.TdNumber>
       <C.TdNumber>{item.quant_min}</C.TdNumber>
       <C.TdNumber alignCenter>
         <FaRegEdit style={{ marginRight:"40px", cursor: "pointer" }} onClick={() => onEdit(item.name)} />

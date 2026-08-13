@@ -1,11 +1,13 @@
 import React, { useState, useRef } from "react";
 import * as C from "./styles";
 import { Modal } from 'antd';
+import { getStorage } from "firebase/storage";
 
 const Resume = ({ total, reloadPage, handleCheckout }) => {
   const [openModalDelete, setOpenModalDelete] = useState(false);
 
   const shareTarget = useRef(null);
+  const storage = getStorage();
 
   const handleOpenModalDelete = () => {
     setOpenModalDelete(true);

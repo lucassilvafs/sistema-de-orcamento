@@ -14,12 +14,27 @@ const App = () => {
   useEffect(() => {
     const amountTotal = productsList
       .map((product) => Number(product.total));
+
+    // const amountExpense = transactionsList
+    //   .filter((item) => item.expense)
+    //   .map((transaction) => Number(transaction.amount));
+
+    // const total = Math.abs(total + amountExpense.quant).toFixed(2);
+
+    // const expense = amountExpense.reduce((acc, cur) => acc + cur, 0).toFixed(2);
     const total = amountTotal.reduce((acc, cur) => acc + cur, 0).toFixed(2);
 
+    // setTotal(`${Number(income) < Number(expense) ? "-" : ""}R$ ${total}`);
     setTotal(total);
   }, [productsList]);
 
   const handleAdd = (product) => {
+    // const isRepeated = productsList.find((productItem) => productItem.productName === product.productName);
+    // if (isRepeated) {
+    //   const newArray = productsList.filter((productItem) => productItem.productName !== product.productName);
+    //   setProductsList(newArray);
+    // }
+
     const newArrayProducts = [...productsList, product];
 
     setProductsList(newArrayProducts);

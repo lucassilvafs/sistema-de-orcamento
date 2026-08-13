@@ -1,182 +1,132 @@
-
+/* --- RESET ABSOLUTO PARA O MOTOR DE IMPRESSÃO --- */
 @page { 
-    size: auto;  
-    /* margin: 0mm; */
-    margin-top: 20px;
-    margin-bottom: 10px;
-}
-
-@media print { 
-    .btn-pdf { 
-        display:none; 
-    } 
-}
-
-p {
-    margin: 5px;
-}
-
-.container-ex {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    padding: 20px;
-    width: 800px;
-    border: 1px solid white;
-    background-color: white;
-}
-        
-.container {
-    font-family: Arial, Helvetica, sans-serif;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-left: 48px;
-    border: 1px solid white;
-    background-color: white;
-    /* margin-left: 30px; */
-    /* display: none; */
-
-
-    @media (max-width: 750px) {
-        width: 700px;
-        /* padding: 30px; */
-    }
-}
-
-main {
-    width: 700px;
+    size: A4 portrait;  
+    margin: 15mm 15mm 15mm 15mm !important;
 }
 
 body {
-    -webkit-print-color-adjust:exact !important;
-    print-color-adjust:exact !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+    background-color: #ffffff !important;
+}
+
+p {
+    margin: 5px 0;
+}
+
+/* --- Container Principal Forçado --- */
+.container {
+    font-family: Arial, Helvetica, sans-serif;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 auto !important;
+    padding: 0 !important;
+    display: block !important; /* Destrói o flexbox herdado do componente pai */
+    color: #000000;
+}
+
+main {
+    width: 100% !important;
+    display: block !important;
+}
+
+/* --- Cabeçalho Ajustado --- */
+.header {
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    border-bottom: 1px solid #ccc !important;
+    padding-bottom: 15px !important;
+    margin-bottom: 15px !important;
 }
 
 .logo {
-    margin-right: 250px;
-    width: 150px;
-    height: 150px;
-}
-
-.qr-code {
-    width: 170px;
-    height: 170px;
-    margin-right: 50px;
-}
-
-h1.header-title, section.header-info p {
-    margin: 1px
-}
-
-h4 {
-    margin-left: 16px;
-}
-
-table.table-items {
-    padding: 0px;
-    margin-top: 10px;
-    margin-bottom: 0px;
-    border: solid black 1px;
-    border-spacing: 0px;
-    /* max-width: 300px; */
-}
-
-table.table-items th {
-    padding: 10px 40px;
-    background-color:#d9d9d9;
-    border: solid black 1px;
-    margin: 0px;
-}
-
-table.table-items td{
-    border:1px solid black;
-    padding: 10px;
-    text-align: center;
-}
-
-table.table-items th.desc-table{
-    width: 90%;
-}
-
-table.table-items th.td-table {
-    width: 20px;
-
-}
-
-h1.header-title {
-    page-break-after: avoid;
-    line-height: normal;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 12pt;
-    font-weight: bold;
-    color: #000000
-}
-
-.header {
-    display: flex;
-    border: 1px solid white;
-    background-color: white;
-    flex-direction: row;
-    color: #000000
+    height: auto !important;
+    width: 250px !important;
+    object-fit: contain !important;
+    margin: 0 !important;
 }
 
 .header-info {
-    line-height: normal;
-    font-family: Arial;
-    font-size: 10pt;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-    color: #000000
+    line-height: 1.4 !important;
+    font-size: 10pt !important;
+    text-align: right !important;
 }
 
-.client-info {
-    margin-top: 20px;
+h1.header-title {
+    margin: 0 0 5px 0 !important;
+    font-size: 13pt !important;
+    font-weight: bold !important;
 }
 
-.order-info {
-    margin-top: 20px;
+/* --- Tabelas Livres de Trava --- */
+table.table-items {
+    width: 100% !important;
+    margin-top: 15px !important;
+    margin-bottom: 20px !important;
+    border-collapse: collapse !important;
 }
 
+table.table-items th {
+    padding: 10px !important;
+    background-color: #d9d9d9 !important;
+    border: solid black 1px !important;
+    font-size: 11pt !important;
+}
+
+table.table-items td {
+    border: 1px solid black !important;
+    padding: 10px !important;
+    text-align: center !important;
+    font-size: 10pt !important;
+}
+
+/* --- SOLUÇÃO CIRÚRGICA PARA O CORTE DO PAYMENT-INFO --- */
+.payment-info {
+    display: block !important; /* Cancela flexbox */
+    width: 100% !important;
+    clear: both !important;
+    
+    /* Força quebra de página se não couber de jeito nenhum */
+    break-inside: avoid !important;
+    page-break-inside: avoid !important; 
+    margin-top: 30px !important;
+}
+
+/* Força os QR codes e dados a se comportarem como blocos inline rígidos na impressão */
+.payment-info .qr-code, 
+.payment-info .qr-code2 {
+    display: inline-block !important;
+    vertical-align: top !important;
+    width: 140px !important;
+    height: 200px !important;
+    margin-right: 25px !important;
+}
+
+.payment-info div {
+    display: inline-block !important;
+    vertical-align: top !important;
+    width: calc(100% - 180px) !important;
+}
+
+/* --- Rodapé --- */
 .footer {
-    margin-top: 50px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    margin-top: 40px !important;
+    text-align: center !important;
+    font-size: 10pt !important;
+    display: block !important;
+    break-inside: avoid !important;
+    page-break-inside: avoid !important;
 }
 
 .container-footer-info {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 30px;
-    margin-bottom: 50px;
+    margin-top: 15px !important;
+    margin-bottom: 15px !important;
+    display: block !important;
 }
 
-.btn-pdf {
-    margin-top: 50px;
-    margin-bottom: 50px;
-    margin-bottom: 20px;
-    padding: 10px 40px;
-    border: 1px solid;
-    border-radius: 5px;
-    border-color: #F29215;
-    cursor: pointer;
-    font-size: 18px;
-    color: #F29215;
-    background-color: #fff;
-    transition: all 0.25s ease;
-}
-
-button:hover {
-    background-color: #F29215;
-    color: #fff;
-}
-
-.payment-info {
-    display: flex;
-    flex-direction: row;
-    margin-top: 20px;
+/* Remove botões na impressão */
+.btn-pdf { 
+    display: none !important; 
 }

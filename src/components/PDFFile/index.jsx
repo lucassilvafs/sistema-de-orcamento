@@ -2,9 +2,11 @@ import React, { useState, useEffect } from "react";
 import "./styles.css";
 import logo from "../../images/logo.png";
 
+
 const PdfFile = React.forwardRef(({ props }, ref) => {
   const [order, setOrder] = useState({});
   const [products, setProducts] = useState([]);
+
 
   const day = new Date().getDate();
   const actualMonth = new Date().getMonth() + 1;
@@ -21,20 +23,26 @@ const PdfFile = React.forwardRef(({ props }, ref) => {
 
   }, [props]);
 
+  const formatDateBR = (value) => {
+    if (!value) return "";
+    const [ano, mes, dia] = value.split("-");
+    return `${dia}/${mes}/${ano}`;
+  };
+
   return (
     <div ref={ref} className="container">
       <header className="header">
-        <img src={logo} className="logo" alt="logo da Empresa Fictícia" />
-        <section className="header-info">
-          <h1 className="header-title">Empresa Fictícia</h1>
-          <p>Tel.: (XX) XXXXX.XXXX / XXXXX.XXXX</p>
-          <p>contato@empresafictícia.com.br</p>
-          <p>www.empresafictícia.com.br</p>
-          <p><em>Instagram: </em>@empresa_ficticia</p>
-          <p>Rua dos bobos, 000 - Bairro X</p>
-        </section>
-      </header>
-      _______________________________________________________________________________________
+            <img src={logo} className="logo" alt="logo da Empresa Fictícia" />
+            <section className="header-info">
+              <h1 className="header-title">Empresa Fictícia</h1>
+              <p>Tel.: (85) 9XXXX.XXXX / 9XXXX.XXXX</p>
+              <p>contato@empresaficticia.com.br</p>
+              <p>www.empresaficticia.com.br</p>
+              <p><em>Instagram: </em>@empresa_ficticia</p>
+              <p>Rua dos bobos, 000</p>
+            </section>
+          </header>
+
       <main>
         <section className="order-info">
           <h4>Segue nossa proposta conforme solicitado:</h4>
@@ -52,8 +60,8 @@ const PdfFile = React.forwardRef(({ props }, ref) => {
                   <tr key={index}>
                     <td>{product.quant}</td>
                     <td>{product.desc}</td>
-                    <td>R$ {Number(product.unitValue).toFixed(2)}</td>
-                    <td>R$ {Number(product.total).toFixed(2)}</td>
+                    <td>{Number(product.unitValue).toLocaleString("pt-BR", {style: "currency", currency: "BRL",})}</td>
+                    <td>{Number(product.total).toLocaleString("pt-BR", {style: "currency", currency: "BRL",})}</td>
                   </tr>
                 ))
               }
@@ -63,16 +71,22 @@ const PdfFile = React.forwardRef(({ props }, ref) => {
             <strong>* Cliente:</strong> {order.clientName}
           </p>
           <p>
-            <strong>* Valor total do pedido: R$ {order.total}</strong>
+            <strong>* Valor total do pedido: {Number(order.total).toLocaleString("pt-BR", {
+              style: "currency",
+              currency: "BRL",
+            })}</strong>
           </p>
-          <p>
-            <strong>* Tempo de produção:</strong> {order.production} dias úteis
-          </p>
+          {order.production ? <p>
+            <strong>* Tempo de produção: </strong>
+            {order.production && order.production > 0
+              ? `${order.production} ${order.production > 1 ? "dias úteis" : "dia útil"}`
+              : "Indeterminado"}
+          </p> : ""}
           <p>
             <strong>* Tipo de pagamento: </strong> {order.payment}
           </p>
           <p>
-            <strong>* Forma de pagamento: </strong> 50% no fechamento e o restante quando o material tiver pronto
+            <strong>* Forma de pagamento: </strong> {order.payForm}
           </p>
           <p>
             <strong>* OBS: Este orçamento tem validade de 15 dias. Após este período, favor consulte-nos novamente. Todos os preços informados estão expressos em Reais (R$) e são exclusivos para este orçamento. O serviço será executado no País: BRASIL, Estado: CEARÁ, Cidade: FORTALEZA. </strong>
@@ -82,36 +96,41 @@ const PdfFile = React.forwardRef(({ props }, ref) => {
           <div>
             <h3>DADOS BANCÁRIOS</h3>
             <p>
-              <strong>BANCO: </strong> <span style={{ color: "red" }}>Banco X</span>
+              <strong>BANCO: </strong> <span style={{ color: "red" }}>Banco Genérico</span>
             </p>
             <p>
-              <strong>AGÊNCIA: </strong> <span style={{ color: "red" }}>0001</span>
+              <strong>AGÊNCIA: </strong> <span style={{ color: "red" }}>0000</span>
             </p>
             <p>
               <strong>CONTA: </strong> <span style={{ color: "red" }}>XXXXXXXX-X</span>
             </p>
+            <p>
+            </p>
           </div>
         </section>
       </main>
-      <footer className="footer">
-        <p>
-          Fortaleza, {day} de {month} de {year}
-        </p>
-        <p>
-          Atenciosamente,
-        </p>
-        <div className="container-footer-info">
-          <p>
-            Empresa Fictícia
-          </p>
-          <p>
-            CNPJ: XX.XXX.XXX/XXXX-XX
-          </p>
-        </div>
-        <p>
-          www.empresaficticia.com.br | 2024
-        </p>
-      </footer>
+          <footer className="footer">
+            <p>
+              Fortaleza, {day} de {month} de {year}
+            </p>
+            <p>
+              Atenciosamente,
+            </p>
+            <div className="container-footer-info">
+              <p>
+                Empresa Fictícia
+              </p>
+              <p>
+                CNPJ: XX.XXX.XXX/XXXX-XX
+              </p>
+              <p>
+                Inscrição Municipal: XXX.XXX-X
+              </p>
+            </div>
+            <p>
+              www.empresaficticia.com.br | {year}
+            </p>
+          </footer>
     </div>
   );
 });

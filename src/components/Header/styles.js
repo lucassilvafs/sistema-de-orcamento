@@ -3,7 +3,8 @@ import styled from "styled-components";
 export const Container = styled.div`
   display: flex;
   justify-content: space-between;
-  height: 150px;
+  // height: 150px;
+  height: 100px;
   text-align: center;
   // align-items: center;
   background: #F29215;
@@ -24,8 +25,7 @@ export const ContainerDiv = styled.div`
 `;
 
 export const Header = styled.h1`
-  margin-right: 50px;
-  padding-top: 20px;
+  padding-top: 25px;
   color: #fff;
 
   @media (max-width: 750px) {
@@ -34,9 +34,10 @@ export const Header = styled.h1`
 `;
 
 export const Img = styled.img`
-  height: 80px;
-  width: 80px;
+  height: 60px;
+  width: 60px;
   margin-right: 20px;
+  margin-top: 20px;
 
   @media (max-width: 750px) {
     height: 60px;
@@ -66,7 +67,7 @@ export const ButtonDrawer = styled.button`
 export const Button = styled.button`
   height: 45px;
   width: 45px;
-  margin: 20px 0 0 30px;
+  margin: 35px 0 0 30px;
   padding: 5px 10px;
   border: none;
   border-radius: 5px;

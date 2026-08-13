@@ -3,9 +3,15 @@ import './styles.css';
 
 const CardItem = ({ name, price, quantMin, handleAddInfo }) => {
     return (
-      <div className="product-div">
+      <div className="productDiv">
         <button className='custom-btn btn-14' onClick={() => handleAddInfo(name)}>
           {name}
+          {/* <img className="product-img" src="gs://databasefb-6948c.appspot.com/capa-blog-coding-iniciante.jpg" />  */}
+          {/* <div className="product-info"> */}
+            {/* <p className="product-title">{ name }</p> */}
+            {/* <p className="product-price">R$ { price.toFixed(2) }</p>
+            <p className="product-quant">Quant. mínima: { quantMin }</p> */}
+          {/* </div> */}
         </button>
       </div>
     );

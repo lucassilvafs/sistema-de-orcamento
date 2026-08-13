@@ -22,8 +22,16 @@ export const TdNumber = styled.td`
   text-align: center;
   word-break: break-all;
 
-  svg {
-    width: 18px;
-    height: 18px;
+  button {
+    border-radius: 10px !important;
+    font-weight: 300;
   }
+
+  svg {
+    width: 15px;
+    height: 15px;
+  }
+
 `;
+
+
