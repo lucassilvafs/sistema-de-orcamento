@@ -337,17 +337,17 @@ const Form = ({ handleAdd, productsList, setProductsList, total, orderInfo }) =>
 
   const pickerRef = useRef(null);
 
-  const openPicker = () => {
-    if (pickerRef.current) {
-      pickerRef.current.showPicker();
-    }
-  };
+  // const openPicker = () => {
+  //   if (pickerRef.current) {
+  //     pickerRef.current.showPicker();
+  //   }
+  // };
 
-  const formatDateBR = (value) => {
-    if (!value) return "";
-    const [ano, mes, dia] = value.split("-");
-    return `${dia}/${mes}/${ano}`;
-  };
+  // const formatDateBR = (value) => {
+  //   if (!value) return "";
+  //   const [ano, mes, dia] = value.split("-");
+  //   return `${dia}/${mes}/${ano}`;
+  // };
 
   return (
     <>
